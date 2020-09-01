@@ -1,0 +1,27 @@
+/*What we are doing */
+
+.performance .heading {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: $primary-white-color;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.performance .heading {
+    margin: 0;
+    padding: 27px 82px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.performance .item {
+    display: block;
+    position: relative;
+    width: calc((1200px - 30px * 3) / 3);
+}
+
+.performance .list.display-flex {
+    justify-content: space-between;
+}

@@ -1,0 +1,183 @@
+/* modal window */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 528px;
+    /* height: 581px; */
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+    & .lead {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        color: $title-text-color;
+    }
+    & .inp-wrapper {
+        position: relative;
+        text-align: left;
+    }
+    & .inp-wrapper.margin {
+        margin-bottom: 28px;
+    }
+    & .modal-input,
+    & .modal-input-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    & .modal-input {
+        padding: 11px 42px;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    & .modal-input-text {
+        max-height: 120px;
+        padding: 12px 16px;
+        resize: none;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    & .input-label {
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    & .inp-wrapper>.input-label {
+        position: absolute;
+        top: 12px;
+        left: 42px;
+        font-size: 14px;
+        line-height: 1.142;
+        letter-spacing: 0.01em;
+    }
+    & .input-label {
+        position: absolute;
+    }
+    & .btn {
+        padding: 10px 56px 10px 55px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
+    & .agreement-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    & .agreement-link {
+        color: $accent-color;
+    }
+}
+
+.modal .close-modal {
+    display: block;
+    text-align: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+    }
+}
+
+.close-modal .icon {
+    display: inline;
+    vertical-align: middle;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    & .modal {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+}
+
+.inp-wrapper>.comment-input-label {
+    top: -18px;
+    left: 0;
+    position: absolute;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.167;
+    /* identical to box height */
+    letter-spacing: 0.01em;
+}
+
+.modal-input-text::placeholder {
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal .modal-input:focus,
+.modal .modal-input-text:focus {
+    outline-color: $accent-color;
+    cursor: pointer;
+    border-color: $accent-color;
+}
+
+.modal .modal-input-text:focus+.comment-input-label {
+    color: $accent-color;
+}
+
+.modal .modal-input:focus+.input-label,
+.modal .modal-input-text:focus+.input-label {
+    color: $accent-color;
+    transform: translate(-42px, -29px);
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.01em;
+}
+
+.modal .modal-input:not(:placeholder-shown)+.input-label {
+    transform: translate(-42px, -29px);
+}
+
+.inp-wrapper>.icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal .modal-input:focus~.icon {
+    fill: $accent-color;
+}
+
+.modal .inp-wrapper>.icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,48 @@
+/*  Our team */
+
+.our-team {
+    background-color: $secondary-bg-color;
+    & .display-flex {
+        flex-wrap: wrap;
+    }
+    & .activity-description {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    & .icon {
+        fill: $icon-grey-color;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    & .img-link:hover .icon,
+    & .img-link:focus .icon {
+        fill: #ffffff;
+    }
+    & .name-heading {
+        margin-top: 30px;
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.187;
+        /* identical to box height */
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: $title-text-color;
+    }
+    & .activity-description {
+        font-size: 16px;
+        line-height: 1.187;
+        /* identical to box height */
+        text-align: center;
+    }
+}
+
+.our-team .employee-card {
+    width: calc((1200px - 30px * 4) / 4);
+    background: #ffffff;
+    /* material shadow v1 */
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 0px 0px 4px 4px;
+    &:not(:nth-child(4n)) {
+        margin-right: 30px;
+    }
+}

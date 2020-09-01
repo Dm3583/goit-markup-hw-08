@@ -1,0 +1,41 @@
+/* hero */
+
+.hero {
+    text-align: center;
+    padding: 200px 0px;
+}
+
+.overlay {
+    height: 600px;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/jpg/header-img.jpg);
+    background-color: rgba(47, 48, 58, 0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-title {
+    color: $primary-white-color;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    /* or 136% */
+    /* text-align: center; */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.container>.hero-title {
+    width: 696px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    /* outline: 1px dashed tomato; */
+}
+
+.hero>.container .btn {
+    padding: 10px 32px;
+}

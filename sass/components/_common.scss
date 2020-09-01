@@ -1,0 +1,119 @@
+/* common */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: $primary-white-color;
+    color: $primary-text-color;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.714;
+    /* or 171% */
+    letter-spacing: 0.03em;
+}
+
+.container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    /* outline: 2px solid red; */
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.img-link:hover,
+.img-link:focus {
+    background-color: $accent-color;
+}
+
+.btn {
+    border-radius: 4px;
+    color: $primary-white-color;
+    background-color: $accent-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    /* identical to box height, or 187% */
+    text-align: center;
+    letter-spacing: 0.06em;
+    border: 1px solid transparent;
+    &:hover {
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 50px;
+    color: $title-text-color;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.667;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.142;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.picture {
+    display: block;
+}
+
+.list-item {
+    border: 1px solid transparent;
+}
+
+.advantages,
+.performance,
+.our-team,
+.our-clients,
+.portfolio {
+    padding: 94px 0;
+}
+
+.site-header .list,
+.advantages .list,
+.performance .list,
+.our-team .list,
+.our-clients .list,
+.footer .list,
+.footer .list.display-flex,
+.portfolio .list.filter,
+.portfolio .list.portfolio-cards {
+    margin: 0;
+    padding: 0px;
+}
+
+.btn-action,
+.contacts-list .contacts-link {
+    display: inline-flex;
+    align-items: center;
+}
