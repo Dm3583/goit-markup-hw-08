@@ -9,24 +9,37 @@
     height: 100%;
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 93px 15px;
+    overflow-y: scroll;
+    @media screen and (min-width: $tablet) {
+        padding: 208px 15px;
+    }
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    // max-width: 90%;
+    position: relative;
+    max-width: 450px;
     width: 100%;
-    max-width: 528px;
     /* height: 581px; */
     padding: 40px;
     background-color: #fff;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    transform: scale(1);
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
-    & .lead {
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {}
+    @media screen and (min-width: $desktop) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        max-width: 528px;
+    }
+    .lead {
         margin-top: 0;
         margin-bottom: 30px;
         font-weight: 700;
@@ -34,15 +47,15 @@
         line-height: 23px;
         color: $title-text-color;
     }
-    & .inp-wrapper {
+    .inp-wrapper {
         position: relative;
         text-align: left;
     }
-    & .inp-wrapper.margin {
+    .inp-wrapper.margin {
         margin-bottom: 28px;
     }
-    & .modal-input,
-    & .modal-input-text {
+    .modal-input,
+    .modal-input-text {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,20 +64,20 @@
         box-sizing: border-box;
         border-radius: 4px;
     }
-    & .modal-input {
+    .modal-input {
         padding: 11px 42px;
         transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    & .modal-input-text {
+    .modal-input-text {
         max-height: 120px;
         padding: 12px 16px;
         resize: none;
         transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    & .input-label {
+    .input-label {
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    & .inp-wrapper>.input-label {
+    .inp-wrapper>.input-label {
         position: absolute;
         top: 12px;
         left: 42px;
@@ -72,22 +85,33 @@
         line-height: 1.142;
         letter-spacing: 0.01em;
     }
-    & .input-label {
+    .input-label {
         position: absolute;
     }
-    & .btn {
+    .btn {
         padding: 10px 56px 10px 55px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     }
-    & .agreement-wrapper {
+    .agreement-wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         margin-top: 20px;
         margin-bottom: 30px;
     }
-    & .agreement-link {
+    .agreement-link {
         color: $accent-color;
+    }
+    .checkbox-label {
+        justify-content: start;
+        margin-right: 4px;
+    }
+    .label-text,
+    .agreement-link {
+        @media screen and (max-width: $before-desktop) {
+            font-size: 12px;
+            line-height: 1.166;
+        }
     }
 }
 

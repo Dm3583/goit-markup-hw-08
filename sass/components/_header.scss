@@ -1,26 +1,72 @@
 /* header */
 
-.site-header {
-    border-bottom: 1px solid #ececec;
-}
-
 .site-header .display-flex {
     align-items: center;
+}
+
+.site-header {
+    position: relative;
+    border-bottom: 1px solid #ececec;
+    .site-nav {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+        @media screen and (min-width: $tablet) {
+            display: flex;
+        }
+    }
+    .contacts-list {
+        @media screen and (max-width: $tablet) {
+            display: none;
+        }
+        @media screen and (min-width: $tablet) and (max-width: $desktop) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @media screen and (min-width: $desktop) {
+            flex-direction: row;
+        }
+    }
+    .icon.desktop {
+        @media screen and (max-width: $desktop) {
+            display: none;
+        }
+        @media screen and (min-width: $desktop) {
+            display: block;
+        }
+    }
+    .icon.tablet {
+        @media screen and (min-width: $desktop) {
+            display: none;
+        }
+    }
 }
 
 .site-nav .logo {
     display: inline-block;
     padding-top: 24px;
     padding-bottom: 25px;
-    margin-right: 85px;
+    @media screen and (min-width: $tablet) {
+        margin-right: 88px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-right: 85px;
+    }
 }
 
 .site-nav>.list>.menu-item+.menu-item {
     margin-left: 50px;
 }
 
-.site-header .contacts-list>.contacts-item+.contacts-item {
-    margin-left: 30px;
+.site-header .contacts-list>.contacts-item:not(:last-child) {
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        margin-bottom: 10px;
+    }
+    @media screen and(min-width: $desktop) {
+        margin-right: 30px;
+        margin-bottom: 0px;
+    }
 }
 
 .site-nav .link {
@@ -34,10 +80,17 @@
 
 .site-nav .menu-item,
 .contacts-list .contacts-item {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.142;
-    letter-spacing: 0.02em;
+    @media screen and (min-width: $tablet) {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.167;
+        /* identical to box height */
+        letter-spacing: 0.02em;
+    }
+    @media screen and (min-width: $desktop) {
+        font-size: 14px;
+        line-height: 1.142;
+    }
 }
 
 .contacts-list .contacts-link {

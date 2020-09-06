@@ -1,0 +1,89 @@
+// mobile menu
+.mobile-menu {
+    @media screen and(min-width: $tablet) {
+        display: none;
+    }
+    padding: 10px 15px;
+    vertical-align:middle;
+    .mobile-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .mobile-menu-button {
+        display: inline-flex;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        .icon-cross {
+            display: none;
+        }
+        &.is-open .icon-cross {
+            display: block;
+        }
+        &.is-open .icon-menu {
+            display: none;
+        }
+        &:hover,
+        &:focus {
+            fill: $accent-color;
+        }
+    }
+    .mobile-menu-container {
+        display: none;
+        background: $primary-white-color;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 60px;
+        z-index: 99;
+        &.is-open {
+            display: block;
+        }
+    }
+    .mobile-site-nav {
+        margin-bottom: 60px;
+    }
+    .mobile-menu-item+.mobile-menu-item {
+        margin-top: 40px;
+    }
+    .mobile-menu-item .link {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.667;
+        /* identical to box height */
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: $title-text-color;
+        &:hover,
+        &:focus {
+            color: $accent-color;
+        }
+    }
+    .link.active {
+        color: $accent-color;
+        &::after {
+            bottom: -8px;
+        }
+    }
+    .mobile-contacts-item+.mobile-contacts-item {
+        margin-top: 16px;
+    }
+    .mobile-contacts-item>.contacts-link {
+        font-size: 14px;
+        line-height: 1, 714;
+        /* or 171% */
+        letter-spacing: 0.03em;
+        color: $primary-text-color;
+        &:hover,
+        &:focus {
+            color: $accent-color;
+        }
+    }
+}

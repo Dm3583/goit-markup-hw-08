@@ -1,28 +1,76 @@
-/* our advantages*/
-
-.advantages .display-flex {
-    justify-content: space-between;
-}
-
-.advantages .list>.item {
-    width: calc((1200px - 30px * 4) / 4);
-}
-
-.advantages .icon-wrapper {
-    display: flex;
-    height: 120px;
-    background-color: $secondary-bg-color;
-    justify-content: center;
-    align-items: center;
-}
-
-.advantages .heading {
-    color: $title-text-color;
-    margin-top: 30px;
-    margin-bottom: 0;
-}
-
-.advantages .advantages-text {
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
+        /* our advantages*/
+        
+        // .advantages .display-flex {
+        //     justify-content: space-between;
+        // }
+        .advantages {
+            @media screen and (min-width: $desktop) {
+                padding-bottom: 0;
+            }
+        }
+        
+        .advantages .list {
+            display: block;
+            @media screen and (min-width: $tablet) {
+                display: flex;
+            }
+            @media screen and (min-width: $tablet) and (max-width: $desktop) {
+                margin: -15px;
+                flex-flow: wrap;
+            }
+            @media screen and (min-width: $desktop) {
+                justify-content: space-between;
+            }
+        }
+        
+        .advantages .list>.item {
+            display: block;
+            width: 100%;
+            @media screen and (min-width: $mobile) {
+                max-width: $mobile;
+                @media screen and (max-width: $tablet) {
+                    &:not(:last-child) {
+                        margin-bottom: 30px;
+                        // background-color: tomato;
+                    }
+                }
+            }
+            @media screen and (min-width: $tablet) {
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                    background-color: #FFFFFF;
+                }
+            }
+            @media screen and (min-width: $tablet) {
+                width: calc((768px - 30px * 2) / 2);
+                margin: 15px;
+            }
+            @media screen and (min-width: $desktop) {
+                width: calc((1200px - 30px * 4) / 4);
+            }
+        }
+        
+        .advantages .icon-wrapper {
+            display: flex;
+            height: 120px;
+            background-color: $secondary-bg-color;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .advantages .heading {
+            color: $title-text-color;
+            margin-top: 30px;
+            margin-bottom: 0;
+            @media screen and(max-width: $tablet) {
+                text-align: center;
+            }
+            @media screen and(min-width: $tablet) {
+                text-align: left;
+            }
+        }
+        
+        .advantages .advantages-text {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
