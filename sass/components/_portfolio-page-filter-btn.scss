@@ -32,8 +32,9 @@
 }
 
 .list.filter .filter-item {
-    @media screen and (max-width: $before-desktop) {
-        margin-left: 8px;
+    margin-left: 8px;
+    @media screen and (min-width: $tablet) {
+        margin-left: 0px;
     }
 }
 
@@ -54,6 +55,7 @@
     flex-flow: wrap;
     margin: 0 0 0 -8px;
     @media screen and (min-width: $tablet) {
+        margin: 0;
         justify-content: center;
         margin-bottom: 50px;
     }
