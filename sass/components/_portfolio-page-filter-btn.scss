@@ -31,10 +31,19 @@
     }
 }
 
-.list.filter .filter-item+.filter-item {
-    @media screen and (max-width: $desktop) {
+.list.filter .filter-item {
+    @media screen and (max-width: $before-desktop) {
         margin-left: 8px;
     }
+}
+
+.list.filter .filter-item+.filter-item {
+    @media screen and (min-width: $tablet) {
+        margin-left: 8px;
+    }
+}
+
+.list.filter .filter-item+.filter-item {
     @media screen and (min-width: $desktop) {
         margin-left: 10px;
     }
@@ -43,6 +52,7 @@
 .portfolio .list.filter {
     justify-content: flex-start;
     flex-flow: wrap;
+    margin: 0 0 0 -8px;
     @media screen and (min-width: $tablet) {
         justify-content: center;
         margin-bottom: 50px;

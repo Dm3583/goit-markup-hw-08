@@ -1653,7 +1653,13 @@ body {
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
+  .list.filter .filter-item {
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .list.filter .filter-item + .filter-item {
     margin-left: 8px;
   }
@@ -1671,6 +1677,7 @@ body {
           justify-content: flex-start;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
+  margin: 0 0 0 -8px;
 }
 
 @media screen and (min-width: 768px) {
