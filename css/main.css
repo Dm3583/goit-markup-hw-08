@@ -1997,8 +1997,10 @@ body {
 }
 
 .close-modal .icon {
+  position: absolute;
+  top: 20%;
+  left: 20%;
   display: inline;
-  vertical-align: middle;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
